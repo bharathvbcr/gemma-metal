@@ -1,0 +1,7 @@
+free-gen n=4 capture=true dir=/Users/bharath/.cache/huggingface/hub/models--mlx-community--gemma-4-31b-it-4bit/snapshots/696d436c404745a59f30e4939a658162b0a9e57f
+hazard_skip_auto=false explicitly_set=true
+step_path_next=531 (expect 531)
+logits finite=true nan=0 min=-48.8246 max=22.7868
+generate_first8=[531, 237076, 237076, 237076]
+generate_unique=2 first=531
+host_seed_second=237076 (generate second was Some(237076))

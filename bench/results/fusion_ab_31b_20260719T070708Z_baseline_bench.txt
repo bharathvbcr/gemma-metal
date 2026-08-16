@@ -1,0 +1,20 @@
+    Finished `release` profile [optimized] target(s) in 0.11s
+     Running `target/release/bench --model /Users/bharath/.cache/huggingface/hub/models--mlx-community--gemma-4-31b-it-4bit/snapshots/696d436c404745a59f30e4939a658162b0a9e57f`
+gemma-metal Phase 4 speed harness (gemma-metal-0.1.0-phase6)
+gates.md Phase-0 reference (this host):
+  E4B Q4 mlx-lm best decode ≈ 75.7 tok/s  (honest lane gate ≥48–60)
+  Ollama E4B Q4_K_M ≈ 55.8 tok/s
+  31B Ollama decode ≈ 12.3 tok/s          (product gate ≥15)
+  31B MLX+DFlash ≈ 37.2 tok/s             (MTP product gate ≥25)
+
+host synthetic prefill (T=8, 3 layers): 5.67 ms/iter
+
+=== GPU Hot-bank synthetic decode (honest, mini graph) ===
+  graph: vocab=512 hidden=256 layers=3 (SWA+global+consumer)
+  decode: 779.8 tok/s  (32 steps after prefill)
+  TTFT proxy (prefill T=8): 7.28 ms
+
+=== Real model Q4 (MLX affine) ===
+  weights: /Users/bharath/.cache/huggingface/hub/models--mlx-community--gemma-4-31b-it-4bit/snapshots/696d436c404745a59f30e4939a658162b0a9e57f
+  loaded 832 matrices in 9.0s; hot≈17.87 GiB; layers=60 vocab=262144 hidden=5376
+  gaps: PLE Q4 Hot residual on; gate/proj still skipped; mid-commit off by default

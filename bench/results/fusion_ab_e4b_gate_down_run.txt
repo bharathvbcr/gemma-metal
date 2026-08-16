@@ -1,0 +1,29 @@
+=== layer-fusion v1 A/B · model=e4b · arms=baseline gate_down · TRACE=1 · Sun Jul 19 23:11:56 UTC 2026 ===
+building (release)…
+   Compiling gemma-metal v0.1.0 (/Users/bharath/Code/parameter_golf/Rust_MLKit/gemma-metal)
+    Finished `release` profile [optimized] target(s) in 3.93s
+
+--- arm=baseline  [GEMMA_METAL_FUSE_QKV=0 GEMMA_METAL_FUSE_PLE=0 GEMMA_METAL_FUSE_ROPE_KV=0 GEMMA_METAL_FUSE_LAYER=0 GEMMA_METAL_FUSE_GATE_DOWN=0  + pin FUSE_KV=1 GEMV_INTERLEAVE=0 GEMV_SIMD=1]
+    tokens: [133533, 91962, 3301, 217288, 36042, 15486, 132414, 2546, 2546, 695, 95364, 129212, 236743, 26889, 9602, 26889]  (exactness @ HAZARD=0)
+    decode: 20.87 tok/s  (real model, shipping hazard)
+    dispatches/token (mean decode): 599.9
+
+--- arm=gate_down  [GEMMA_METAL_FUSE_QKV=0 GEMMA_METAL_FUSE_PLE=0 GEMMA_METAL_FUSE_ROPE_KV=0 GEMMA_METAL_FUSE_LAYER=0 GEMMA_METAL_FUSE_GATE_DOWN=1  + pin FUSE_KV=1 GEMV_INTERLEAVE=0 GEMV_SIMD=1]
+    tokens: [135577, 68129, 103715, 127171, 67660, 113166, 33130, 55546, 189785, 115975, 240934, 14119, 60032, 63501, 67471, 23545]  (exactness @ HAZARD=0)
+    decode: 6.37 tok/s  (real model, shipping hazard)
+    dispatches/token (mean decode): 557.9
+
+=== VERDICT ===
+  EXACTNESS gate_down: *** FAIL *** — do not ship this arm
+      baseline: [133533, 91962, 3301, 217288, 36042, 15486, 132414, 2546, 2546, 695, 95364, 129212, 236743, 26889, 9602, 26889]
+      gate_down:     [135577, 68129, 103715, 127171, 67660, 113166, 33130, 55546, 189785, 115975, 240934, 14119, 60032, 63501, 67471, 23545]
+  DISPATCHES gate_down: PASS (Δ=42.0 vs baseline 599.9)
+  DISPATCHES gate_down: engagement OK (Δ≈−42 expected; got Δ=42.0)
+
+  arm            tok/s   dispatch      speedup
+  baseline       20.87      599.9       1.000x
+  gate_down       6.37      557.9       0.305x
+
+artifact: bench/results/fusion_ab_e4b_20260719T231156Z.json
+logs:     bench/results/fusion_ab_e4b_20260719T231156Z_*.txt
+NOTE: exactness and/or required dispatch-drop failed — fusion must not ship.

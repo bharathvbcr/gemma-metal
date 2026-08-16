@@ -1,0 +1,12 @@
+Fetching 8 files:   0%|          | 0/8 [00:00<?, ?it/s]Fetching 8 files: 100%|██████████| 8/8 [00:00<00:00, 20880.17it/s]
+==========
+<|channel>thought
+Here's a plan to structure the paragraph:
+1.  **Define the core concept:** What are sliding-window attention and KV caches? (Efficiency/Memory management).
+2.  **Explain the problem they solve:** The quadratic complexity and memory overhead of full self-attention in large sequence models (like Transformers).
+3.  **Detail the mechanism (Sliding Window):** How does the window restrict attention? (Local focus, chunking).
+4.  **Detail the role of the KV Cache:** How is the cache used in conjunction with the window? (Storing past keys/values to
+==========
+Prompt: 28 tokens, 313.133 tokens-per-sec
+Generation: 128 tokens, 76.253 tokens-per-sec
+Peak memory: 4.302 GB

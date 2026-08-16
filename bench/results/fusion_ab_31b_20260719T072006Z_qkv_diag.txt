@@ -1,0 +1,12 @@
+   Compiling gemma-metal v0.1.0 (/Users/bharath/Code/parameter_golf/Rust_MLKit/gemma-metal)
+    Finished `release` profile [optimized] target(s) in 3.98s
+     Running `target/release/diag_tok 31b`
+model=31b dir=/Users/bharath/.cache/huggingface/hub/models--mlx-community--gemma-4-31b-it-4bit/snapshots/696d436c404745a59f30e4939a658162b0a9e57f
+loaded in 35.0s hidden=5376 layers=60 embed_scale=73.3212 softcap=30
+hot_gemv_q_ones: rows=8192 cols=5376 nz=8192/8192 nan=0 max_abs=4.7407 layout=RowMajor
+hot_gemv_gate_0.1: rows=21504 cols=5376 nan=0 max_abs=0.4238
+embed_only: finite=true nan=0 min=-5.4418 max=6.8381
+generated 16 new toks in 4.219s → 3.79 tok/s (wall includes prefill)
+new tokens: [759, 759, 759, 537, 759, 537, 537, 537, 537, 537, 537, 537, 537, 537, 240017, 240017]
+unique=3 all_zero=false logits finite=true nan=0 min=-31.2493 max=45.5916 argmax=240017
+resid x: finite=true nan=0 min=-4.6665 max=3.8631

@@ -1,0 +1,55 @@
+    Blocking waiting for file lock on build directory
+warning: variable does not need to be mutable
+   --> /Users/bharath/Code/parameter_golf/Rust_MLKit/crates/metal-runtime/src/runtime.rs:763:21
+    |
+763 |                 let mut idx = m4.active_alloc.lock().map_err(|e| e.to_string())?;
+    |                     ----^^^
+    |                     |
+    |                     help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: `metal-runtime` (lib) generated 1 warning (run `cargo fix --lib -p metal-runtime` to apply 1 suggestion)
+warning: unused variable: `upload_t0`
+   --> src/gpu_model.rs:303:13
+    |
+303 |         let upload_t0 = std::time::Instant::now();
+    |             ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_upload_t0`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `gemma-metal` (lib) generated 1 warning (run `cargo fix --lib -p gemma-metal` to apply 1 suggestion)
+   Compiling gemma-metal v0.1.0 (/Users/bharath/Code/parameter_golf/Rust_MLKit/gemma-metal)
+    Finished `release` profile [optimized] target(s) in 10.24s
+     Running `/var/folders/wl/qc_0nnp91cd5kfy179krkjxr0000gn/T/cursor-sandbox-cache/819f18fe1b7c221bc561315f962b9537/cargo-target/release/bench --e4b`
+gemma-metal Phase 4 speed harness (gemma-metal-0.1.0-phase6)
+gates.md Phase-0 reference (this host):
+  E4B Q4 mlx-lm best decode ≈ 75.7 tok/s  (honest lane gate ≥48–60)
+  Ollama E4B Q4_K_M ≈ 55.8 tok/s
+  31B Ollama decode ≈ 12.3 tok/s          (product gate ≥15)
+
+host synthetic prefill (T=8, 3 layers): 5.83 ms/iter
+
+=== GPU Hot-bank synthetic decode (honest, mini graph) ===
+  graph: vocab=512 hidden=256 layers=3 (SWA+global+consumer)
+  decode: 695.2 tok/s  (32 steps after prefill)
+  TTFT proxy (prefill T=8): 6.80 ms
+
+=== Real E4B Q4 (MLX affine) ===
+  weights: /Users/bharath/.cache/huggingface/hub/models--mlx-community--gemma-4-e4b-it-4bit/snapshots/475b9088d29754a3379866cf5aeb6b41acd313c2
+  loaded 537 matrices in 1.0s; hot≈2.67 GiB; layers=42 vocab=262144 hidden=2560
+  gaps: PLE Hot tables still skipped on real E4B load (bandwidth); GPU KV + packed encode + tiled GEMV on
+gemma-metal: uploaded E4B Hot banks — 42 layers, vocab=262144, hidden=2560, scheme=Q4Mlx { group_size: 64 }, hot≈2.67 GiB
+  Hot upload + session prep: 0.4s
+  warmup generate…
+  warmup ok, seq_len=5
+  TTFT (prefill T=4): 254.6 ms
+  decode: 13.85 tok/s  (16 steps after prefill)
+  vs Phase-0: mlx-lm ≈75.7 | Ollama ≈55.8 | gate ≥48–60
+  verdict: BELOW honest-lane gate (expected for partial/slow v1)
+  wrote /Users/bharath/Code/parameter_golf/Rust_MLKit/gemma-metal/bench/results/run_e4b_gemma_metal_1783973493.json
+
+=== Kernel microbenches ===
+GPU gemv_q4 [2560x2560] @ M=1: 336.5 µs/call
+GPU softcap_argmax vocab=262144: 190.4 µs/call
+GPU FA SWA h256 prefill B=1 T=16 H=8: 159.2 µs/call

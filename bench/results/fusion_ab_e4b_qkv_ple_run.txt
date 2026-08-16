@@ -1,0 +1,42 @@
+=== layer-fusion v1 A/B · model=e4b · arms=baseline qkv ple both · TRACE=1 · Mon Jul 20 01:25:11 UTC 2026 ===
+building (release)…
+   Compiling metal-runtime v0.1.0 (/Users/bharath/Code/parameter_golf/Rust_MLKit/crates/metal-runtime)
+   Compiling gemma-metal v0.1.0 (/Users/bharath/Code/parameter_golf/Rust_MLKit/gemma-metal)
+    Finished `release` profile [optimized] target(s) in 10.66s
+
+--- arm=baseline  [GEMMA_METAL_FUSE_QKV=0 GEMMA_METAL_FUSE_PLE=0 GEMMA_METAL_FUSE_ROPE_KV=0 GEMMA_METAL_FUSE_LAYER=0 GEMMA_METAL_FUSE_GATE_DOWN=0  + pin FUSE_KV=1 GEMV_INTERLEAVE=0 GEMV_SIMD=1]
+    tokens: [133533, 91962, 3301, 217288, 236782, 236743, 196059, 805, 217288, 236881, 59425, 240296, 28698, 178662, 67991, 17682]  (exactness @ HAZARD=0)
+    decode: 23.58 tok/s  (real model, shipping hazard)
+    dispatches/token (mean decode): 599.9
+
+--- arm=qkv  [GEMMA_METAL_FUSE_QKV=1 GEMMA_METAL_FUSE_PLE=0 GEMMA_METAL_FUSE_ROPE_KV=0 GEMMA_METAL_FUSE_LAYER=0 GEMMA_METAL_FUSE_GATE_DOWN=0  + pin FUSE_KV=1 GEMV_INTERLEAVE=0 GEMV_SIMD=1]
+    tokens: [133533, 91962, 3301, 217288, 236782, 236743, 196059, 805, 217288, 236881, 59425, 240296, 28698, 178662, 67991, 17682]  (exactness @ HAZARD=0)
+    decode: 23.56 tok/s  (real model, shipping hazard)
+    dispatches/token (mean decode): 575.9
+
+--- arm=ple  [GEMMA_METAL_FUSE_QKV=0 GEMMA_METAL_FUSE_PLE=1 GEMMA_METAL_FUSE_ROPE_KV=0 GEMMA_METAL_FUSE_LAYER=0 GEMMA_METAL_FUSE_GATE_DOWN=0  + pin FUSE_KV=1 GEMV_INTERLEAVE=0 GEMV_SIMD=1]
+    tokens: [133533, 91962, 3301, 217288, 236782, 236743, 196059, 805, 217288, 236881, 59425, 240296, 28698, 178662, 67991, 17682]  (exactness @ HAZARD=0)
+    decode: 23.54 tok/s  (real model, shipping hazard)
+    dispatches/token (mean decode): 557.9
+
+--- arm=both  [GEMMA_METAL_FUSE_LAYER=1 GEMMA_METAL_FUSE_QKV=1 GEMMA_METAL_FUSE_PLE=1 GEMMA_METAL_FUSE_ROPE_KV=1 GEMMA_METAL_FUSE_GATE_DOWN=0  + pin FUSE_KV=1 GEMV_INTERLEAVE=0 GEMV_SIMD=1]
+    tokens: [133533, 91962, 3301, 217288, 236782, 236743, 196059, 805, 217288, 236881, 59425, 240296, 28698, 178662, 67991, 17682]  (exactness @ HAZARD=0)
+    decode: 23.26 tok/s  (real model, shipping hazard)
+    dispatches/token (mean decode): 509.9
+
+=== VERDICT ===
+  EXACTNESS qkv: PASS (stream identical to baseline)
+  EXACTNESS ple: PASS (stream identical to baseline)
+  EXACTNESS both: PASS (stream identical to baseline)
+  DISPATCHES qkv: PASS (Δ=24.0 vs baseline 599.9)
+  DISPATCHES ple: PASS (Δ=42.0 vs baseline 599.9)
+  DISPATCHES both: PASS (Δ=90.0 vs baseline 599.9)
+
+  arm            tok/s   dispatch      speedup
+  baseline       23.58      599.9       1.000x
+  qkv            23.56      575.9       0.999x
+  ple            23.54      557.9       0.998x
+  both           23.26      509.9       0.986x
+
+artifact: bench/results/fusion_ab_e4b_20260720T012511Z.json
+logs:     bench/results/fusion_ab_e4b_20260720T012511Z_*.txt

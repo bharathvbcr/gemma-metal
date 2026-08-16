@@ -1,0 +1,527 @@
+    Finished `release` profile [optimized] target(s) in 0.04s
+     Running `target/release/bench --e4b`
+gemma-metal Phase 4 speed harness (gemma-metal-0.1.0-phase6)
+gates.md Phase-0 reference (this host):
+  E4B Q4 mlx-lm best decode ≈ 75.7 tok/s  (honest lane gate ≥48–60)
+  Ollama E4B Q4_K_M ≈ 55.8 tok/s
+  31B Ollama decode ≈ 12.3 tok/s          (product gate ≥15)
+  31B MLX+DFlash ≈ 37.2 tok/s             (MTP product gate ≥25)
+
+host synthetic prefill (T=8, 3 layers): 5.93 ms/iter
+[trace] tok=0 encode=1384µs wait=0µs sync=0µs disp=48 bar=33 commit=0 cold=2 bytes≈0.00GiB
+               embed      1µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+
+[trace] aggregate over 1 tokens (host encode µs / est bytes):
+                  op   ms_total      MiB_est
+               embed       0.00          0.0
+               layer       0.00          0.0
+[trace] tok=0 encode=24µs wait=0µs sync=0µs disp=48 bar=33 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=16µs wait=0µs sync=0µs disp=48 bar=33 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=45µs wait=0µs sync=0µs disp=51 bar=35 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=219µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      1µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=38µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=38µs wait=0µs sync=0µs disp=48 bar=33 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+
+[trace] aggregate over 1 tokens (host encode µs / est bytes):
+                  op   ms_total      MiB_est
+               embed       0.00          0.0
+               layer       0.00          0.0
+[trace] tok=0 encode=18µs wait=0µs sync=0µs disp=48 bar=33 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=15µs wait=0µs sync=0µs disp=48 bar=33 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=17µs wait=0µs sync=0µs disp=51 bar=35 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=36µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=20µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=18µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=17µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=39µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=27µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=19µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=26µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=23µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=24µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=27µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=25µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=25µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=23µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=24µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=22µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=25µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=17µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=24µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=23µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=17µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=24µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=28µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=23µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=17µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=26µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=22µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=24µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=23µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=23µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=17µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+[trace] tok=0 encode=23µs wait=0µs sync=0µs disp=54 bar=36 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+
+=== GPU Hot-bank synthetic decode (honest, mini graph) ===
+  graph: vocab=512 hidden=256 layers=3 (SWA+global+consumer)
+  decode: 765.1 tok/s  (32 steps after prefill)
+[trace] tok=0 encode=77µs wait=0µs sync=0µs disp=48 bar=33 commit=0 cold=0 bytes≈0.00GiB
+               embed      2µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+
+[trace] aggregate over 1 tokens (host encode µs / est bytes):
+                  op   ms_total      MiB_est
+               embed       0.00          0.0
+               layer       0.00          0.0
+[trace] tok=0 encode=16µs wait=0µs sync=0µs disp=48 bar=33 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=15µs wait=0µs sync=0µs disp=48 bar=33 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=15µs wait=0µs sync=0µs disp=48 bar=33 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=17µs wait=0µs sync=0µs disp=50 bar=33 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=15µs wait=0µs sync=0µs disp=50 bar=33 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=15µs wait=0µs sync=0µs disp=50 bar=33 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=20µs wait=0µs sync=0µs disp=53 bar=35 commit=0 cold=0 bytes≈0.00GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+             lm_head      0µs  ~0.1 MiB
+  TTFT proxy (prefill T=8): 7.46 ms
+
+=== Real model Q4 (MLX affine) ===
+  weights: /Users/bharath/.cache/huggingface/hub/models--mlx-community--gemma-4-e4b-it-4bit/snapshots/475b9088d29754a3379866cf5aeb6b41acd313c2
+  loaded 579 matrices in 1.7s; hot≈4.31 GiB; layers=42 vocab=262144 hidden=2560
+  gaps: PLE Q4 Hot residual on; gate/proj still skipped; mid-commit off by default
+  Hot upload + session prep: 1.7s
+  warmup generate…
+[trace] tok=0 encode=339859µs wait=0µs sync=0µs disp=466 bar=337 commit=0 cold=2 bytes≈0.00GiB
+               embed 337505µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+
+[trace] aggregate over 1 tokens (host encode µs / est bytes):
+                  op   ms_total      MiB_est
+               embed     337.50          0.0
+               layer       0.00          0.0
+[trace] tok=0 encode=230µs wait=0µs sync=0µs disp=466 bar=337 commit=0 cold=0 bytes≈0.00GiB
+               embed      2µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=254µs wait=0µs sync=0µs disp=466 bar=337 commit=0 cold=0 bytes≈0.00GiB
+               embed      4µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=372µs wait=0µs sync=0µs disp=469 bar=339 commit=0 cold=0 bytes≈0.39GiB
+               embed      3µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=238µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      3µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+  warmup ok, seq_len=5
+[trace] tok=0 encode=276µs wait=0µs sync=0µs disp=466 bar=337 commit=0 cold=0 bytes≈0.00GiB
+               embed     56µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+
+[trace] aggregate over 1 tokens (host encode µs / est bytes):
+                  op   ms_total      MiB_est
+               embed       0.06          0.0
+               layer       0.00          0.0
+[trace] tok=0 encode=180µs wait=0µs sync=0µs disp=466 bar=337 commit=0 cold=0 bytes≈0.00GiB
+               embed      4µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=760µs wait=0µs sync=0µs disp=466 bar=337 commit=0 cold=0 bytes≈0.00GiB
+               embed     48µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=280µs wait=0µs sync=0µs disp=469 bar=339 commit=0 cold=0 bytes≈0.39GiB
+               embed      6µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+  TTFT (prefill T=4): 260.9 ms
+[trace] tok=0 encode=223µs wait=0µs sync=0µs disp=466 bar=337 commit=0 cold=0 bytes≈0.00GiB
+               embed     27µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+
+[trace] aggregate over 1 tokens (host encode µs / est bytes):
+                  op   ms_total      MiB_est
+               embed       0.03          0.0
+               layer       0.00          0.0
+[trace] tok=0 encode=161µs wait=0µs sync=0µs disp=466 bar=337 commit=0 cold=0 bytes≈0.00GiB
+               embed      2µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=176µs wait=0µs sync=0µs disp=466 bar=337 commit=0 cold=0 bytes≈0.00GiB
+               embed      5µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=223µs wait=0µs sync=0µs disp=469 bar=339 commit=0 cold=0 bytes≈0.39GiB
+               embed     12µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=308µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      3µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=204µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      2µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=158µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      1µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=160µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=253µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=207µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=211µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=207µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=213µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=208µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=199µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=205µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=240µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=204µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=205µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+[trace] tok=0 encode=203µs wait=0µs sync=0µs disp=470 bar=340 commit=0 cold=0 bytes≈0.39GiB
+               embed      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+               layer      0µs  ~0.0 MiB
+  decode: 23.91 tok/s  (16 steps after prefill)
+  vs Phase-0: mlx-lm ≈75.7 | Ollama ≈55.8 | gate ≥48–60
+  verdict: BELOW honest-lane gate (expected for partial/slow v1)
+  wrote /Users/bharath/Code/parameter_golf/Rust_MLKit/gemma-metal/bench/results/run_e4b_gemma_metal_1784445562.json
+  wrote /Users/bharath/Code/parameter_golf/Rust_MLKit/gemma-metal/bench/results/latest_e4b_gemma_metal.json
+
+=== Kernel microbenches ===
+GPU FA SWA h128 (DFlash draft stub): pipeline OK
+GPU gemv_q4 [2560x2560] @ M=1: 373.2 µs/call
+GPU softcap_argmax vocab=262144: 281.0 µs/call
+GPU FA SWA h128 stub prefill B=1 T=8 H=4: 4.9 µs/call
+GPU FA SWA h256 prefill B=1 T=16 H=8: 18.0 µs/call

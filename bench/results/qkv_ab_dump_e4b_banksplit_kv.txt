@@ -1,0 +1,41 @@
+model=e4b dir=/Users/bharath/.cache/huggingface/hub/models--mlx-community--gemma-4-e4b-it-4bit/snapshots/475b9088d29754a3379866cf5aeb6b41acd313c2
+loaded in 2.1s hidden=2560 layers=42 embed_scale=50.5964 softcap=30
+hot_gemv_q_ones: rows=2048 cols=2560 nz=2048/2048 nan=0 max_abs=4.8909 layout=RowMajor
+hot_gemv_gate_0.1: rows=10240 cols=2560 nan=0 max_abs=0.6341
+embed_only: finite=true nan=0 min=-5.9293 max=3.7305
+[qkv_ab_dump] pos=0 layer=0 primary_fused=true layout=RowMajor q=2048x2560 kv=512x2560 gs=64 tg_q/k/v=256/64/64 max_err q=0.000000e0 k=0.000000e0 v=0.000000e0
+[qkv_ab_dump] first_diverge=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_fused max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_gemv_kv max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] pos=1 layer=0 primary_fused=true layout=RowMajor q=2048x2560 kv=512x2560 gs=64 tg_q/k/v=256/64/64 max_err q=0.000000e0 k=0.000000e0 v=0.000000e0
+[qkv_ab_dump] first_diverge=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_fused max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_gemv_kv max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] pos=2 layer=0 primary_fused=true layout=RowMajor q=2048x2560 kv=512x2560 gs=64 tg_q/k/v=256/64/64 max_err q=0.000000e0 k=0.000000e0 v=0.000000e0
+[qkv_ab_dump] first_diverge=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_fused max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_gemv_kv max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] pos=3 layer=0 primary_fused=true layout=RowMajor q=2048x2560 kv=512x2560 gs=64 tg_q/k/v=256/64/64 max_err q=0.000000e0 k=0.000000e0 v=0.000000e0
+[qkv_ab_dump] first_diverge=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_fused max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_gemv_kv max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] pos=4 layer=0 primary_fused=true layout=RowMajor q=2048x2560 kv=512x2560 gs=64 tg_q/k/v=256/64/64 max_err q=0.000000e0 k=0.000000e0 v=0.000000e0
+[qkv_ab_dump] first_diverge=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_fused max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_gemv_kv max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] pos=5 layer=0 primary_fused=true layout=RowMajor q=2048x2560 kv=512x2560 gs=64 tg_q/k/v=256/64/64 max_err q=0.000000e0 k=0.000000e0 v=0.000000e0
+[qkv_ab_dump] first_diverge=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_fused max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_gemv_kv max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] pos=6 layer=0 primary_fused=true layout=RowMajor q=2048x2560 kv=512x2560 gs=64 tg_q/k/v=256/64/64 max_err q=0.000000e0 k=0.000000e0 v=0.000000e0
+[qkv_ab_dump] first_diverge=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_fused max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_gemv_kv max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] pos=7 layer=0 primary_fused=true layout=RowMajor q=2048x2560 kv=512x2560 gs=64 tg_q/k/v=256/64/64 max_err q=0.000000e0 k=0.000000e0 v=0.000000e0
+[qkv_ab_dump] first_diverge=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_fused max_err=0.000000e0 first=none (bit-exact)
+[qkv_ab_dump] k_solo_vs_gemv_kv max_err=0.000000e0 first=none (bit-exact)
+generated 16 new toks in 2.459s → 6.51 tok/s (wall includes prefill)
+new tokens: [96775, 156509, 236549, 154999, 156509, 109467, 156509, 109467, 156509, 236549, 109467, 156509, 236549, 173806, 236549, 173806]
+unique=6 all_zero=false logits finite=true nan=0 min=-28.7698 max=16.4531 argmax=236549
+resid x: finite=true nan=0 min=-13.8353 max=100.2611

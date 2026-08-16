@@ -1,0 +1,7 @@
+Fetching 8 files:   0%|          | 0/8 [00:00<?, ?it/s]Fetching 8 files: 100%|██████████| 8/8 [00:00<00:00, 11924.11it/s]
+Running warmup..
+Timing with prompt_tokens=128, generation_tokens=128, batch_size=1.
+Trial 1:  prompt_tps=1982.579, generation_tps=75.763, peak_memory=4.458, total_time=1.885
+Trial 2:  prompt_tps=1976.688, generation_tps=75.577, peak_memory=4.458, total_time=1.889
+Trial 3:  prompt_tps=1941.338, generation_tps=75.814, peak_memory=4.459, total_time=1.881
+Averages: prompt_tps=1966.868, generation_tps=75.718, peak_memory=4.458

@@ -1,0 +1,25 @@
+=== layer-fusion v1 A/B · model=e4b · arms=baseline qkv · TRACE=0 · Mon Jul 20 01:17:36 UTC 2026 ===
+building (release)…
+   Compiling gemma-metal v0.1.0 (/Users/bharath/Code/parameter_golf/Rust_MLKit/gemma-metal)
+    Finished `release` profile [optimized] target(s) in 5.32s
+
+--- arm=baseline  [GEMMA_METAL_FUSE_QKV=0 GEMMA_METAL_FUSE_PLE=0 GEMMA_METAL_FUSE_ROPE_KV=0 GEMMA_METAL_FUSE_LAYER=0 GEMMA_METAL_FUSE_GATE_DOWN=0  + pin FUSE_KV=1 GEMV_INTERLEAVE=0 GEMV_SIMD=1]
+    tokens: [133533, 91962, 3301, 217288, 236782, 236743, 196059, 805, 217288, 236881, 59425, 240296, 28698, 178662, 67991, 17682]  (exactness @ HAZARD=0)
+    decode: 12.87 tok/s  (real model, shipping hazard)
+    dispatches/token: SKIPPED (set FUSION_AB_TRACE=1 to enable; default off)
+
+--- arm=qkv  [GEMMA_METAL_FUSE_QKV=1 GEMMA_METAL_FUSE_PLE=0 GEMMA_METAL_FUSE_ROPE_KV=0 GEMMA_METAL_FUSE_LAYER=0 GEMMA_METAL_FUSE_GATE_DOWN=0  + pin FUSE_KV=1 GEMV_INTERLEAVE=0 GEMV_SIMD=1]
+    tokens: [133533, 91962, 3301, 217288, 236782, 236743, 196059, 805, 217288, 236881, 59425, 240296, 28698, 178662, 67991, 17682]  (exactness @ HAZARD=0)
+    decode: 13.11 tok/s  (real model, shipping hazard)
+    dispatches/token: SKIPPED (set FUSION_AB_TRACE=1 to enable; default off)
+
+=== VERDICT ===
+  EXACTNESS qkv: PASS (stream identical to baseline)
+  DISPATCHES: SKIPPED (FUSION_AB_TRACE off — exactness still gated)
+
+  arm            tok/s   dispatch      speedup
+  baseline       12.87          ?       1.000x
+  qkv            13.11          ?       1.019x
+
+artifact: bench/results/fusion_ab_e4b_20260720T011736Z.json
+logs:     bench/results/fusion_ab_e4b_20260720T011736Z_*.txt

@@ -1,0 +1,6 @@
+gemma-metal: uploaded E4B Hot banks — 60 layers, vocab=262144, hidden=5376, scheme=Q4Mlx { group_size: 64 }, hot≈17.87 GiB
+gemma-metal serve (gemma-metal-0.1.0-phase6) preset=31b model_id=gemma-metal-31b
+  text shapes: hidden=5376 layers=60 k_eq_v=true ple=false kv_share=0 head_dim=256/512
+  31B MTP assistant stub: backbone=5376 draft_hidden=1024 centroids=0
+  backend: Hot Q4 loaded from mlx-community/gemma-4-31b-it-4bit
+listening on http://127.0.0.1:8791

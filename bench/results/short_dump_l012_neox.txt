@@ -1,0 +1,8 @@
+short-dump dir=/Users/bharath/.cache/huggingface/hub/models--mlx-community--gemma-4-31b-it-4bit/snapshots/696d436c404745a59f30e4939a658162b0a9e57f
+target_next_argmax=237144 (mlx golden 531) t=4
+L0: native sum=98.0957 absmean=0.211698 first8=[-0.04808, -0.0276, 0.00979, 0.12091, -0.07578, -0.09179, 0.20675, -0.09133]
+     mlx sum=97.6229 absmean=0.211965 first8=[-0.04883, -0.02771, 0.00958, 0.12158, -0.0752, -0.09131, 0.20703, -0.09131] first8_close=true
+L1: native sum=-65.0098 absmean=0.167825 first8=[-0.00087, -0.00271, 0.00034, 0.00744, -0.00243, -0.00696, 0.01419, -0.00588]
+     mlx sum=-65.4924 absmean=0.167847 first8=[-0.00094, -0.0027, 0.00032, 0.00748, -0.00238, -0.00693, 0.01416, -0.00589] first8_close=true
+L2: native sum=-52.1394 absmean=0.175129 first8=[0.00205, 0.00019, -0.00267, 0.01146, -0.00092, 0.00238, 0.01135, -0.00062]
+     mlx sum=-53.1320 absmean=0.175145 first8=[0.002, 0.00015, -0.00275, 0.01141, -0.00082, 0.0024, 0.01129, -0.00064] first8_close=true
