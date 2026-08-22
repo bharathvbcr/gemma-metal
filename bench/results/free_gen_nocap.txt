@@ -1,5 +1,0 @@
-free-gen n=8 capture=false dir=/Users/bharath/.cache/huggingface/hub/models--mlx-community--gemma-4-31b-it-4bit/snapshots/696d436c404745a59f30e4939a658162b0a9e57f
-step_path_next=236773 (expect 531)
-generate_first8=[236773, 236773, 236773, 236773, 236773, 236773, 236773, 236773]
-generate_unique=1 first=236773
-FAIL: step path 236773 != 531

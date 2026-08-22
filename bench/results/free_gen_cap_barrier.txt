@@ -1,4 +1,0 @@
-free-gen n=4 capture=true dir=/Users/bharath/.cache/huggingface/hub/models--mlx-community--gemma-4-31b-it-4bit/snapshots/696d436c404745a59f30e4939a658162b0a9e57f
-step_path_next=531 (expect 531)
-generate_first8=[531, 237076, 237076, 237076]
-generate_unique=2 first=531

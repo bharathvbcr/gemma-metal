@@ -1,3 +1,0 @@
-    Finished `release` profile [optimized] target(s) in 0.03s
-     Running `target/release/diag_tok 31b`
-model=31b dir=/Users/bharath/.cache/huggingface/hub/models--mlx-community--gemma-4-31b-it-4bit/snapshots/696d436c404745a59f30e4939a658162b0a9e57f
