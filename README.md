@@ -18,7 +18,7 @@ Product lane is **honest INT4 (+ MTP later)**, not challenge frontier PPL-burn.
 
 | Crate | Role |
 |-------|------|
-| [`../crates/metal-runtime/`](../crates/metal-runtime/) | Shared Metal 4 encode, residency, packed binder, TensorOps/simdgroup **GEMM** (prefill), util ops, MTLTensor prep |
+| [`crates/metal-runtime/`](crates/metal-runtime/) | Shared Metal 4 encode, residency, packed binder, TensorOps/simdgroup **GEMM** (prefill), util ops, MTLTensor prep |
 | **`gemma-metal`** (this crate) | Gemma graph: Q4 banks, PLE split, dual KV, decode **GEMV**, dual FA, tokenizer, benches |
 | `arch_02_value_resid/metal-native/` | **Training** stays here — do not train in gemma-metal / metal-runtime |
 
@@ -27,9 +27,9 @@ Reuse the runtime substrate (~encode/GEMM). Do **not** drag bwd/Muon/XSA/VE or f
 ## Layout
 
 ```
-Rust_MLKit/
-  crates/metal-runtime/   # Phase 0b extract
-  gemma-metal/            # this product crate
+gemma-metal/              # this repository
+  crates/metal-runtime/   # shared Metal 4 runtime
+  src/                    # the Gemma graph
     src/                  # config … gpu_model, mtp, kernels, …
     src/bin/bench.rs      # Phase 4 speed harness
     src/bin/serve.rs      # Phase 6 OpenAI-compatible stub

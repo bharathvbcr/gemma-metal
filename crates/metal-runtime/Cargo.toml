@@ -1,0 +1,48 @@
+[package]
+name = "metal-runtime"
+version = "0.1.0"
+edition = "2021"
+description = "Shared Metal 4 encode runtime + TensorOps GEMM (extracted from arch_02 metal-native)"
+publish = false
+
+[dependencies]
+objc2 = "0.6"
+objc2-foundation = { version = "0.3", features = ["NSString", "NSURL", "NSError", "NSData", "NSValue", "NSRange"] }
+objc2-metal = { version = "0.3", features = [
+    "MTLDevice",
+    "MTLLibrary",
+    "MTLBuffer",
+    "MTLResource",
+    "MTLAllocation",
+    # Classic MTLCommandQueue/Buffer/Encoder/ComputeCommandEncoder pruned —
+    # encode is Metal 4 only (MTL4*).
+    "MTLComputePipeline",
+    "MTLTypes",
+    "MTLGPUAddress",
+    "MTLEvent",
+    "MTLResidencySet",
+    "MTL4CommandQueue",
+    "MTL4CommandBuffer",
+    "MTL4CommandAllocator",
+    "MTL4CommandEncoder",
+    "MTL4ComputeCommandEncoder",
+    "MTL4ArgumentTable",
+    "MTL4Counters",
+    # Compute ICB (D16): ConcurrentDispatch + classic setKernelBuffer bridge.
+    # Opt-in smoke only — not the default decode encode path.
+    "MTLIndirectCommandBuffer",
+    "MTLIndirectCommandEncoder",
+    "MTL4Compiler",
+    "MTL4ComputePipeline",
+    "MTL4PipelineState",
+    "MTL4FunctionDescriptor",
+    "MTL4LibraryFunctionDescriptor",
+    # WWDC26-330 prep: native MTLTensor (incl. quantized Int8 today; Int4 when bindings land).
+    "MTLTensor",
+] }
+libc = "0.2"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1

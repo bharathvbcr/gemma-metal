@@ -11,7 +11,7 @@ default = ["tokenizer"]
 tokenizer = ["dep:tokenizers"]
 
 [dependencies]
-metal-runtime = { path = "../crates/metal-runtime" }
+metal-runtime = { path = "crates/metal-runtime" }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 safetensors = "0.4"
